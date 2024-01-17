@@ -7,6 +7,7 @@ contract Storagefactory {
 
     //unit256 public favouriteNumber
     //type visibility name
+    
     Simplestorage[] public mySimplestoragelist;
 
     function createSimpleStorageContract () public {
