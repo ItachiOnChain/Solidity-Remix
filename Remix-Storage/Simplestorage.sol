@@ -3,10 +3,10 @@ pragma solidity ^0.8.18; //solidity version
 
 contract Simplestorage {
 
-    //types- boolean, uniit, int, address, bytes
+    // basic types- boolean, uniit, int, address, bytes
     // bool isfovourite = true;
     // uint256 favouriteNumber = 88;
-    // string favouriteNumberInText ="eighty-eight";
+    // string favouriteNumberInText = "eighty-eight";
     // int256 fovouriteInt = -88;
     // address myAddress = 0xd516f17686f0cFc132aa142710Fb1ec687682916;
     // bytes32 favouriteByte = "cat";
@@ -40,15 +40,17 @@ contract Simplestorage {
         uint256 FavouriteNumber;
     }
 
-    // person public aditya= person("aditya",69);
-    // person public aditya= person({FavouriteNumber:69, name:"aditya"});
-    // person public akshay= person({FavouriteNumber:10, name:"akshay"});
+    // person public aditya = person("aditya", 69);
+    // person public aditya = person({FavouriteNumber: 69, name: "aditya"});
+    // person public akshay = person({FavouriteNumber: 10, name: "akshay"});
 
     person[] public listOfPeople;
 
-    //key->value
-    mapping(string => uint256) public nameToFavouriteNumber;//default value of any key is 0 in mapping
+    // key-> value
+    mapping (string => uint256) public nameToFavouriteNumber; // default value of any key is 0 in mapping
 
+    // memory keyword can be only used for arrays, mapping, struct
+    
     function addPerson(string memory _name,  uint256 _FavouriteNumber) public {
         // person memory newPerson = person(_name,_FavouriteNumber);
         // listOfPeople.push(newPerson);
@@ -56,14 +58,15 @@ contract Simplestorage {
         nameToFavouriteNumber[_name]=_FavouriteNumber;
     }
 
-    // EVM can store data in 6 places: stack,code,logs
-    //memory(created for short interval-temperory variable & can be changed)
-    //calldata(created for short interval-temperory variable & cant be changed)
-    //storage(permanent variable & can be changed)
-    //memory & callback are only used for arrays, mapping, struct
+    // EVM can store data in 6 places: stack,memory,storage,calldata,logs,chain data
+    // memory(created for short interval-temperory variable & can be changed)
+    // calldata(created for short interval-temperory variable & cant be changed)
+    // storage(permanent variable & can be changed)
+    // memory & callback are only used for arrays, mapping, struct
 
-    //EVM: Ethereum virtual machine
-    //Ethereum, Polygon, Arbitrum, obtimism, zksync
+    // EVM: Ethereum virtual machine
+    // Ethereum, Polygon, Arbitrum, obtimism, zksync
+
 }
 
 contract Simplestorage2 {}
