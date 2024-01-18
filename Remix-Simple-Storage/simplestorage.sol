@@ -46,14 +46,22 @@ contract simplestorage {
 
     person[] public listOfPeople;
 
+    //key->value
+    mapping(string => uint256) public nameToFavouriteNumber;//default value of any key is 0 in mapping
+
     function addPerson(string memory _name,  uint256 _FavouriteNumber) public {
         // person memory newPerson = person(_name,_FavouriteNumber);
         // listOfPeople.push(newPerson);
         listOfPeople.push(person(_name,_FavouriteNumber));
+        nameToFavouriteNumber[_name]=_FavouriteNumber;
     }
 
     // EVM can store data in 6 places: stack,code,logs
     //memory(created for short interval-temperory variable & can be changed)
     //calldata(created for short interval-temperory variable & cant be changed)
     //storage(permanent variable & can be changed)
+    //memory & callback are only used for arrays, mapping, struct
+
+    //EVM: Ethereum virtual machine
+    //Ethereum, Polygon, Arbitrum, obtimism, zksync
 }
