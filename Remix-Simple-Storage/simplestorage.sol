@@ -11,16 +11,25 @@ contract simplestorage {
     // address myAddress = 0xd516f17686f0cFc132aa142710Fb1ec687682916;
     // bytes32 favouriteByte = "cat";
 
-    uint256 myFavouriteNumber;
+    uint256 myFavouriteNumber; //note 0 value is intialized to variable if no value is given
+
 
     // types of visibilty specifiers:
     // 1. public: visible externally and internally(creates a getter funvtion)
     // 2. private: only visible in current contract
-    // 3. internal: only visile internally (bydefault)
+    // 3. internal: only visile internally (by-default)
     // 4. external: only visile externally(only for functions)
-
-    //note 0 value is intialized to variable if no value is given
     
+    function store(uint256 _favouriteNumber) public {
+        myFavouriteNumber = _favouriteNumber;
+    }
+
+    //veiw modifier: for functions disallows modification of state
+
+    function retrive() public view returns (uint256){
+        return myFavouriteNumber;
+    }
+
     //dynamic array
     //uint256[] listOfNum;
     //static array
@@ -31,21 +40,11 @@ contract simplestorage {
         uint256 FavouriteNumber;
     }
 
-    person[] public listOfPeople;
-
     // person public aditya= person("aditya",69);
-
     // person public aditya= person({FavouriteNumber:69, name:"aditya"});
     // person public akshay= person({FavouriteNumber:10, name:"akshay"});
-    function store(uint256 _favouriteNumber) public {
-        myFavouriteNumber = _favouriteNumber;
-    }
 
-    //veiw modifier: for functions disallows modification of state
-
-    function retrive() public view returns (uint256){
-        return myFavouriteNumber;
-    }
+    person[] public listOfPeople;
 
     function addPerson(string memory _name,  uint256 _FavouriteNumber) public {
         // person memory newPerson = person(_name,_FavouriteNumber);
