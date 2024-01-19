@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.18; //solidity version
+pragma solidity ^0.8.18; //solidity version
 
-contract simplestorage {
+contract Simplestorage {
 
     //types- boolean, uniit, int, address, bytes
     // bool isfovourite = true;
@@ -20,7 +20,7 @@ contract simplestorage {
     // 3. internal: only visile internally (by-default)
     // 4. external: only visile externally(only for functions)
     
-    function store(uint256 _favouriteNumber) public {
+    function store(uint256 _favouriteNumber) public virtual {
         myFavouriteNumber = _favouriteNumber;
     }
 
@@ -65,3 +65,6 @@ contract simplestorage {
     //EVM: Ethereum virtual machine
     //Ethereum, Polygon, Arbitrum, obtimism, zksync
 }
+
+contract Simplestorage2 {}
+contract Simplestorage3 {}
